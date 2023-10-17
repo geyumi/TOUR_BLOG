@@ -37,9 +37,7 @@
     cursor: pointer;
   }
   
-  .topCenter {
-    flex: 6;
-  }
+ 
   
   .topList {
     display: flex;
