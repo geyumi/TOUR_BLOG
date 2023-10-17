@@ -7,7 +7,7 @@ const multer= require("multer");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
-const catogoryRoute = require("./routes/catogories");
+const categoryRoute = require("./routes/categories");
 dotenv.config();
 
 app.use(express.json());
@@ -38,10 +38,11 @@ app.post("/api/upload", upload.single("file"),(req,res)=>{
 res.status(200).json("File has been uploaded")});
 
 
+
  app.use("/api/auth",authRoute);
  app.use("/api/users",userRoute);
  app.use("/api/posts",postRoute);
- app.use("/api/catogories",catogoryRoute);
+ app.use('/categories', categoryRoute);
 
  app.listen("5000", () => {
    

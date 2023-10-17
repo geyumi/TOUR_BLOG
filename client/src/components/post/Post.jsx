@@ -1,40 +1,39 @@
 import React from 'react'
 import "./post.css"
+import axios from 'axios'
 import { Link } from 'react-router-dom'
-export default function Post() {
+
+export default function Post({post}) {
   return (
     <div className="post">
+        {post.photo}
               <img
         className="postImg"
-        src="https://cdn.pixabay.com/photo/2022/07/11/08/44/tower-7314495_1280.jpg"
+        src={post.photo} 
         alt=""
       />
       <div className="postInfo">
         <div className="postCats">
-        <span className="postCat">
-            <Link className="link" to="/posts?cat=Music">
-              Music
-            </Link>
+            {post.categories.map((c)=>(
+            <span className="postCat">  
+             {c.name}
           </span>
-          <span className="postCat">
-            <Link className="link" to="/posts?cat=Music">
-              Life
-            </Link>
-          </span>
+                ))
+            }
         </div>
+        <Link to={`/post/${post._id}`} className="link">
+          <span className="postTitle">{post.title}</span>
+        </Link>
         <span className="postTitle">
           <Link to="/post/abc" className="link">
-            Lorem ipsum dolor sit amet
+            {post.title}
           </Link>
         </span>
         <hr/>
-        <span className="postDate">1 hour ago</span>
+        <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
       </div>
       <p className="postDesc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-        officia architecto deserunt deleniti? Labore ipsum aspernatur magnam
-        fugiat, reprehenderit praesentium blanditiis quos cupiditate ratione
-        atque, exercitationem quibusdam, reiciendis odio laboriosam?
+        {post.desc}
       </p>
 
     </div>
