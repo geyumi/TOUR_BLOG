@@ -22,7 +22,7 @@ export default function SinglePost() {
             Author:
             <b className="singlePostAuthor">
               
-                Safak
+                Geyumi
             
             </b>
           </span>
