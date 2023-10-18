@@ -14,12 +14,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
  
  function App(){
   const {user}=useContext(Context)
+
+  
  return (
 <Router>
 
 <TopBar/>
 <Routes>
-<Route path="/" element={<Home />} />
+<Route exact path="/" element={<Home />} />
           
           <Route path="/register" element={user? <Home/> :<Register />} />
           <Route path="/login" element={user? <Home/> :<Login />} />
