@@ -21,7 +21,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 <TopBar/>
 <Routes>
-<Route exact path="/" element={<Home />} />
+<Route exact path="/" element={<Home />} >
+       
+        </Route>
           
           <Route path="/register" element={user? <Home/> :<Register />} />
           <Route path="/login" element={user? <Home/> :<Login />} />

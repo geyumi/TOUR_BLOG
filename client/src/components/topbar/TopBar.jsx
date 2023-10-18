@@ -44,6 +44,8 @@ dispatch({type: "LOGOUT"});
               <img
               className="topImg"
               src={user.profilePic}
+              //"    "
+              
               alt=""
             />
 
