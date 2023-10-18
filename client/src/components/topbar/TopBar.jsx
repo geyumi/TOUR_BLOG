@@ -7,6 +7,7 @@ import { useContext } from "react";
 
 const TopBar = () => {
   const {user,dispatch}=useContext(Context)
+  const PF="http://localhost:5000/images/"
   const handleLogout=()=>{
 
 dispatch({type: "LOGOUT"});
@@ -27,7 +28,9 @@ dispatch({type: "LOGOUT"});
           <li className="topListItem">
             <Link className="link" to='/' >HOME</Link>
           </li>
-          <li className="topListItem">ABOUT</li>
+          <li className="topListItem">
+            <Link className="link" to='/about' >ABOUT</Link></li>
+            
           <li className="topListItem">CONTACT</li>
           <li className="topListItem">
           <Link className="link" to="/write">WRITE</Link>
@@ -39,16 +42,15 @@ dispatch({type: "LOGOUT"});
         </div>
 
         <div className="topRight">
-          {
-            user?(
+        {user?(
+            <Link to ="/settings">
+            
               <img
               className="topImg"
-              src={user.profilePic}
-              //"    "
-              
+              src={PF+user.profilePic}  
               alt=""
-            />
-
+            /> 
+           </Link>
             ):(
               <ul className="topList" >
                 <li className="topListItem">

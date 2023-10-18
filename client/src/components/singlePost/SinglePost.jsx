@@ -88,8 +88,10 @@ export default function SinglePost() {
         data: { username: user.username },  
       }
       );
-      window.location.replace("/");
-    } catch (err) {}
+      window.location.replace("/home");
+    } catch (err) {
+      alert(err)
+    }
   };
 
   console.log(user)

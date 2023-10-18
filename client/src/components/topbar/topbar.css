@@ -29,7 +29,7 @@
     object-fit: cover;
     margin-right: 15px;
     cursor: pointer;
-  }
+  } 
 
   .topIcon {
     font-size: 20px;
@@ -63,4 +63,8 @@
     font-size: 18px;
     color: #666;
     cursor: pointer;
-  }
+  } 
+
+
+
+  

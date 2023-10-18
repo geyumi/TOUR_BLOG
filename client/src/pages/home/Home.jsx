@@ -28,7 +28,7 @@ export default function Home() {
         <Header/>
         <div className='home'>
             <Posts posts={posts}/>
-            <Sidebar/>
+            
         </div>
     </div>
   )
