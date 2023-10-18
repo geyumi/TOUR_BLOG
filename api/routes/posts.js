@@ -151,7 +151,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// //GET POST
+//GET POST
 router.get("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -162,36 +162,26 @@ router.get("/:id", async (req, res) => {
 });
 
 //GET ALL POSTS
-// router.get("/:id", async (req, res) => {
-//   const username = req.query.user
-//   try {
-//     let posts;
-//     if (username) {
-//       posts = await Post.find({ username });
-//     } 
-//     res.status(200).json(posts);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// // GET ALL POSTS BY USERNAME
-// router.get("/:id", async (req, res) => {
-//   const username = req.params.id; // Retrieve the username from the URL parameter
-
-//   try {
-//     const posts = await Post.find({ username });
-
-//     if (!posts) {
-//       // Handle the case where no posts were found for the given username
-//       return res.status(404).json({ message: "No posts found for this user." });
-//     }
-
-//     res.status(200).json(posts);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
+router.get("/", async (req, res) => {
+  const username = req.query.user;
+  const catName = req.query.cat;
+  try {
+    let posts;
+    if (username) {
+      posts = await Post.find({ username });
+    } else if (catName) {
+      posts = await Post.find({
+        categories: {
+          $in: [catName],
+        },
+      });
+    } else {
+      posts = await Post.find();
+    }
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

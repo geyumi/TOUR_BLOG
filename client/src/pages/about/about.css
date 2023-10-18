@@ -58,4 +58,38 @@
     height: 100%;
     border: none; /* Remove the border */
   }
-  
+
+  .desktop-4-item {
+    position: absolute;
+    top: 447px;
+    left: 108px;
+    background-color: rgba(160, 225, 194, 0.86);
+    width: 1202px;
+    height: 370px;
+  }
+  .we-are-travel {
+    margin: 0;
+  }
+
+  .we-are-traveltext {
+    margin: 0;
+    text-align: justify;
+  }
+
+  .about-us-we-container,
+  .why-us {
+    position: absolute;
+    letter-spacing: 0.01em;
+    line-height: 32px;
+    text-transform: capitalize;
+  }
+  .about-us-we-container {
+    top: 483px;
+    left: 151px;
+    font-weight: 500;
+    white-space: pre-wrap;
+    display: inline-block;
+    width: 1128px;
+    height: 334px;
+  }
+
